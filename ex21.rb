@@ -1,35 +1,35 @@
-input_file = ARGV[0]
-
-def print_all(f)
-  puts f.read()
+def add(a, b)
+  puts "ADDING #{a} + #{b}"
+  a + b
 end
 
-def rewind(f)
-  f.seek(0, IO::SEEK_SET)
+def subtract(a, b)
+  puts "SUBTRACTING #{a} - #{b}"
+  a - b
 end
 
-def print_a_line(line_count, f)
-  puts "#{line_count} #{f.readline()}"
+def multiply(a, b)
+  puts "MULTIPLYING #{a} * #{b}"
+  a * b
 end
 
-current_file = File.open(input_file)
+def divide(a, b)
+  puts "DIVIDING #{a} / #{b}"
+  a / b
+end
 
-puts "First let's print the whole file:"
-puts # a blank line
+puts "Let's do some math with just functions!"
 
-print_all(current_file)
+age = add(30, 5)
+height = subtract(78,4)
+weight = multiply(90, 2)
+iq = divide(100, 2)
 
-puts "Now let's rewind, kind of like a tape."
+puts "Age: #{age}, Height: #{height}, Weight: #{weight}, IQ: #{iq}"
 
-rewind(current_file)
+# A puzzle for the extra credit, type it in anyway.
+puts "Here is a puzzle."
 
-puts "Let's print three lines:"
+what = add(age, subtract(height, multiply(weight, divide(iq, 2))))
 
-current_line = 1
-print_a_line(current_line, current_file)
-
-current_line = current_line + 1
-print_a_line(current_line, current_file)
-
-current_line = current_line + 1
-print_a_line(current_line, current_file)
+puts "That becomes: #{what} Can you do it by hand?"
